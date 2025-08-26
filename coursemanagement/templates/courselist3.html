@@ -1,0 +1,39 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+    {% block content %}
+                        Course List 
+                        
+                        <table border="1" align="center">
+                            <tr>
+                                <th>course id</th>
+                                <th>course name</th>
+                                <th>duration</th>
+                                <th>fees</th>
+                                <th>course details</th>
+                                <th>course icon</th>
+                            </tr>
+                            {% for i in result %}
+                            <tr>
+                                <td>{{ i.courseid}}</td>
+                                <td>{{ i.coursename}}</td>
+                                <td>{{ i.duration}}</td>
+                                <td>{{ i.fees}}</td>
+                                <td>{{ i.coursedetails}}</td>
+
+                                <td>
+                                    <img src="{{media_url}}{{i.courseicon}}"
+                                    height="80" width="120">
+                                </td>
+                                
+                            </tr>
+                            {% endfor %}
+ </table>
+    </div>
+        {% endblock %}
+
+
+
+
+
+        

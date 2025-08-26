@@ -1,0 +1,59 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+
+ {% block header %}
+    <header>
+        <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+        <div class="nav-options">
+            <a href="/adminhome/">Home</a>
+             <a href="/adminhome/courseentry/">Add Courses</a>
+             <a href="/adminhome/courselist/">Course List</a>
+             <a href="/adminhome/batchentry/">Add Batches</a>
+             <a href="/adminhome/studentlist/">Student List</a>
+             <a href="/adminhome/adminlogout/">Logout</a>
+        </div>
+    </header>
+    {% endblock %}
+        {% block content %}
+        <style>
+         table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 2px solid #000;
+}
+
+td,
+th {
+    text-align: center;
+    border: 2px solid #000;
+    padding: 10px;
+}   
+        </style>
+                 <table>
+                    <tr>
+                        <th>sr. no</th>
+                        <th>name</th>
+                        <th>gender</th>
+                        <th>mobile no.</th>
+                        <th>address</th>
+                        <th>city</th>
+                        <th>email id</th>
+                        </tr>
+                        {% for x in result %}
+                        <tr>
+                            <td>{{ x.sno }}</td>
+                            <td>{{ x.name }}</td>
+                            <td>{{ x.gender }}</td>
+                            <td>{{ x.mobile }}</td>
+                            <td>{{ x.address }}</td>
+                            <td>{{ x.city }}</td>
+                            <td>{{ x.emailid }}</td>
+                        </tr>
+                        {% endfor %}
+                        </table>
+
+                </div>
+
+        {% endblock %}

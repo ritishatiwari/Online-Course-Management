@@ -1,0 +1,32 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+    {% block content %}
+        
+                        Batch List
+                        <table border="1" align="center">
+                            <tr>
+                                <th>batch id</th>
+                                <th>batch title</th>
+                                <th>start date</th>
+                                <th>batch time</th>
+                                <th>faculty name</th>
+                                
+                            </tr>
+                            {% for x in result %}                 
+                          <tr>
+                           <td>{{ x.batchid }}</td>
+                           <td>{{ x.batchtitle }}</td>
+                           <td>{{ x.startdate}}</td>
+                           <td>{{ x.batchtime}}</td>
+                           <td>{{ x.facultyname }}</td>
+                           
+                        </tr>
+                            {% endfor %}
+
+                        </table>
+                 
+
+        {% endblock %}
+
+       

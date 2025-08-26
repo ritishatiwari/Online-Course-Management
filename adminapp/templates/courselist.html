@@ -1,0 +1,40 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+ {% block header %}
+    <header>
+        <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+        <div class="nav-options">
+            <a href="/adminhome/">Home</a>
+             <a href="/adminhome/courseentry/">Add Courses</a>
+             <a href="/adminhome/courselist/">Course List</a>
+             <a href="/adminhome/batchentry/">Add Batches</a>
+             <a href="/adminhome/studentlist/">Student List</a>
+             <a href="/adminhome/adminlogout/">Logout</a>
+        </div>
+    </header>
+    {% endblock %}
+        {% block content %}
+        <div id="tooplate_main">
+<div class="con_tit_01">Course List</div>
+<table border="1">
+<tr>
+    <th>course id</th>
+    <th>course name</th>
+    <th>duration</th>
+    <th>fees</th>
+    <th>course detail</th>
+    <th>option</th>
+</tr>
+{% for x in result %}                 
+<tr>
+    <td>{{ x.courseid }}</td>
+    <td>{{ x.coursename }}</td>
+    <td>{{ x.duration }}</td>
+    <td>{{ x.fees }}</td>
+    <td>{{ x.coursedetails }}</td>
+    <td><a href="/adminhome/editcourse/?courseid={{ x.courseid }}">Edit</a></td>
+</tr>
+{% endfor %}
+</table>
+    {% endblock %}

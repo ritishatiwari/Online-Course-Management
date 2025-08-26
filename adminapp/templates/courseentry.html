@@ -1,0 +1,36 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+{% block header %}
+<header>
+    <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+    <div class="nav-options">
+        <a href="/adminhome/">Home</a>
+        <a href="/adminhome/courseentry/">Add Courses</a>
+        <a href="/adminhome/courselist/">Course List</a>
+        <a href="/adminhome/batchentry/">Add Batches</a>
+        <a href="/adminhome/studentlist/">Student List</a>
+        <a href="/adminhome/adminlogout/">Logout</a>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<div class="form" >
+    <form class="r-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 class="rh">Course Entry Form</h2>
+        <p>Course Name</p>
+        <input type="text" name="coursename">
+        <p>Duration</p>
+        <input type="text" name="duration">
+
+        <p>Fees</p>
+        <input type="text" name="fees">
+        <p>Course Details</p>
+        <textarea name="coursedetails"></textarea>
+        <p>Course Icon</p>
+        <input type="file" name="courseicon">
+        <button type="submit">Save</button>
+    </form>
+</div>
+{% endblock %}

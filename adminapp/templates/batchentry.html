@@ -1,0 +1,35 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+{% block header %}
+<header>
+    <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+    <div class="nav-options">
+        <a href="/adminhome/">Home</a>
+        <a href="/adminhome/courseentry/">Add Courses</a>
+        <a href="/adminhome/courselist/">Course List</a>
+        <a href="/adminhome/batchentry/">Add Batches</a>
+        <a href="/adminhome/studentlist/">Student List</a>
+        <a href="/adminhome/adminlogout/">Logout</a>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<div class="form">
+    <form class="r-form" method="post">
+        {% csrf_token %}
+        <h2 class="rh">Batch Entry Form</h2>
+        <p>Batch Title</p>
+        <input type="text" name="batchtitle">
+        <p>Batch Time</p>
+        <input type="text" name="batchtime">
+        <p>Start Date</p>
+        <input type="date" name="startdate">
+        <p>Faculty Name</p>
+        <input type="text" name="facultyname">
+        <button type="submit">Save</button>
+        <a href="/adminhome/batchlist1/">Batch List</a>
+    </form>
+    
+</div>
+{% endblock %}

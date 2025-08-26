@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        
+.form {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 100px 20px; */
+
+}
+
+.r-form {
+    height:auto;
+    width: 400px;
+    background: transparent;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.r-form .input,textarea,select {
+    display: block;
+    margin: 20px auto;
+    padding: 5px 20px;
+    width: 80%;
+    border: 2px solid black;
+}
+.r-form span{
+    height: 20px;
+}
+.r-form label{
+    display: inline;
+margin: 0px 10px;
+
+}
+.r-form button {
+        background-color: #fff;
+        color: #EA5B6F;
+        border: 2px solid black;
+        font-weight: bold;
+        letter-spacing: 2.5px;
+        margin: 10px auto;
+        display: block;
+        width: 80%;
+        padding: 7px 10px;
+        cursor: pointer;
+}
+.r-form p{
+    color: #EA5B6F;
+    margin-top: 25px;
+    font-size: 20px;
+}
+/* footer */
+footer{
+    background-color: #fff;
+    color: #EA5B6F;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    height: 200px;
+   width: 100%;
+   /* z-index: -1; */
+}
+
+.sec {
+    /* min-width: 200px; */
+    display: block;
+}
+
+footer .bottom {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    margin: 10px 0;
+    font-size: 18px;
+    text-decoration: none;
+    color: #EA5B6F ;
+    transition: color 0.3s ease;
+}
+
+footer i {
+     font-size: 20px;
+     margin-right: 10px;
+     transition: color 0.3s ease;
+}
+
+    </style>
+</head>
+
+<body>
+    {% block header %}
+    <header>
+        <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+        <div class="nav-options">
+            <a href="/">Home</a>
+             <a href="/courselist3/">Courses</a>
+              <a href="/batchlist3/">Batches</a>
+               <a href="/register/">Register</a>
+               <a href="/login/">login</a>
+        </div>
+    </header>
+    {% endblock %}
+    {% block content %}
+    <div class="banner">
+    
+        <div class="b-image">
+            <img src="{% static 'images/heroimage.jpg' %}" alt="heroimage"/>
+        </div>
+        <div class="content">
+            <h1>Our Latest Courses</h1>
+            <h2>Data Science ,Power BI,Andvance Java,React js</h2>
+            <button><i class="fa-solid fa-code"></i> Courses</button>
+        </div>
+
+    </div>
+    <h1 class="heading">Our Courses</h1>
+    <div class="category-section">
+        <div class="category">
+            <img src="{% static '/images/java_5968282.png' %}">
+            <h4>JAVA</h4>
+        </div>
+
+
+<div class="category">
+            <img src="{% static '/images/python.png' %}">
+            <h4>PYTHON</h4>
+        </div>
+    
+    <div class="category">
+            <img src="{% static '/images/science.png' %}">
+            <h4>REACT JS</h4>
+        </div>
+
+        <div class="category">
+            <img src="{% static '/images/html.png' %}">
+            <h4>HTML</h4>
+        </div>
+
+        <div class="category">
+            <img src="{% static '/images/css-3.png' %}">
+            <h4>CSS</h4>
+        </div>
+
+        <div class="category">
+            <img src="{% static '/images/c-.png' %}">
+            <h4>C++</h4>
+        </div>
+        </div>
+
+       <div class="banner">
+        <div class="b-image">
+            <img src="{% static '/images/about.jpg' %}" alt="aboutimage"/>
+        </div>
+        <div class="content">
+            <h1>About Us</h1>
+            <p>Welcome to ONLINE COURSE MANAGEMENT – your one-stop destination for mastering programming skills online!
+We are an innovative online course management system designed to provide high-quality programming education to learners of all levels — from absolute beginners to aspiring developers and seasoned coders looking to upgrade their skills.
+Our platform offers a wide range of programming courses including Python, C, C++, JavaScript, SQL, Django, and more. Each course is carefully curated by industry experts to ensure that you gain practical knowledge, hands-on experience, and real-world problem-solving abilities</p>
+        </div>
+
+    </div>
+    {% endblock %} 
+
+    {% block footer %}
+    <footer>
+        <div class="sec">
+            <a id="logo"></a>
+            <p>Home for programmers</p>
+            <p>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brans fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </p>
+
+        </div>
+
+        <div class="sec">
+            <p>Home</p>
+            <p>About</p>
+            <p>Courses</p>
+            <p>Contact</p>
+        </div>
+
+        <div class="sec">
+             <p>Login</p>
+            <p>Register</p>
+            <p>FAQs</p>
+            <p>privacy</p>
+
+        </div>
+
+    </footer>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+ 
+
+ {% block header %}
+    <header>
+        <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+        <div class="nav-options">
+            <a href="/studenthome/">Home</a>
+             <a href="/studenthome/courselist2/">Course List</a>
+             <a href="/studenthome/batchlist2/">Batch List</a>
+             <a href="/studenthome/updateprofile/">Update Profile</a>
+             <a href="/studenthome/studentlogout/">Logout</a>
+        </div>
+    </header>
+    {% endblock %}
+        {% block content %}
+        <div id="tooplate_main_top"></div>
+        <div id="tooplate_main">
+            <div class="col_w900">
+             <div class="cleaner"></div>
+            </div>
+
+            <div class="col_w900 col_w900_last">
+                <div class="col_w580 float_l">
+                    <div class="con_tit_01">
+                        Course List
+                        
+                        <table border="1" align="center">
+                            <tr>
+                                <th>course id</th>
+                                <th>course name</th>
+                                <th>duration</th>
+                                <th>fees</th>
+                                <th>course details</th>
+                            </tr>
+                            {% for i in result %}
+                            <tr>
+                                <td>{{ i.courseid}}</td>
+                                <td>{{ i.coursename}}</td>
+                                <td>{{ i.duration}}</td>
+                                <td>{{ i.fees}}</td>
+                                <td>{{ i.coursedetails}}</td>
+                             </tr>
+                            {% endfor %}
+                           </table>
+   
+        {% endblock %}
+
+        

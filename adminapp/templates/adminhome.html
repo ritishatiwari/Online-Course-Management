@@ -1,0 +1,26 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+ {% block header %}
+    <header>
+        <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+        <div class="nav-options">
+            <a href="/adminhome/">Home</a>
+             <a href="/adminhome/courseentry/">Add Courses</a>
+             <a href="/adminhome/courselist/">Course List</a>
+             <a href="/adminhome/batchentry/">Add Batches</a>
+             <a href="/adminhome/studentlist/">Student List</a>
+             <a href="/adminhome/adminlogout/">Logout</a>
+        </div>
+    </header>
+    {% endblock %}
+        {% block content %}
+        <div id="tooplate_main_top"></div>
+        
+                    <div class="con_tit_01">
+                        Welcome {{ role }} emailid - {{ emailid }}
+                    </div>
+                    </div>
+    {% endblock %}
+
+        

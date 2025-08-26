@@ -1,0 +1,59 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+{% block header %}
+
+<header>
+    <a href="index.html" id="logo"><i class="fa-solid fa-laptop-code"></i> ONLINE COURSE MANAGEMENT</a>
+    <div class="nav-options">
+        <a href="/studenthome/">Home</a>
+        <a href="/studenthome/courselist2/">Course List</a>
+        <a href="/studenthome/batchlist2/">Batch List</a>
+        <a href="/studenthome/updateprofile/">Update Profile</a>
+        <a href="/studenthome/studentlogout/">Logout</a>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<div class="form" method="post">
+
+    {% for x in res %}
+    <form class="r-form" method="post">
+        {% csrf_token %}
+        <h2 class="rh">Update Profile</h2>
+
+        <p>Full Name</p>
+        <input type="text" name="name" value="{{ x.name }}" required>
+
+        <p>Gender</p>
+        <span>
+            <input type="text" name="gender" value="{{ x.gender }}">
+         
+        </span>
+
+        <p>Mobile No.</p>
+        <input type="number" name="mobile" value="{{ x.mobile }}" required>
+
+        <p>Address</p>
+        <input type="text" name="address" value="{{ x.address }}">
+
+        <p>City</p>
+        <select name="city" id="" >
+            
+       <option value="{{ x.city }}">{{ x.city }}</option>
+       <option value="bhopal">bhopal</option>
+       <option value="lapataganj">lapataganj</option>
+        </select>
+
+        <p>Email Address</p>
+        <input type="email" name="emailid" value="{{ x.emailid }}" readonly>
+
+        <p>Password</p>
+        <input type="password" name="pwd" value="{{ x.pwd }}" required>
+        <button type="submit">Update Profile</button>
+    </form>
+    {% endfor %}
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="form">
+    <form class="r-form" method="post">
+        {% csrf_token %}
+        <h2 class="rh">Login Here!</h2>
+        <p>Email Address</p>
+        <input type="email" placeholder="Email Address" name="emailid">
+        <p>Password</p>
+        <input type="password" placeholder="enter password" name="pwd">
+        <button type="submit">Login</button>
+
+    </form>
+
+</div>
+{% endblock %}

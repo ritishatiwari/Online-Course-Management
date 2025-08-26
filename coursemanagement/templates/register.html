@@ -1,0 +1,42 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="form">
+    <form class="r-form" method="post">
+        {% csrf_token %}
+        <h2 class="rh">Register Here!</h2>
+        <p>Full Name</p>
+        <input type="text" name="name" placeholder="enter name" class="input">
+        <p>Gender</p>
+        <span>
+            <input type="radio" name="gender" value="male">
+            <label for="">male</label>
+            <input type="radio" name="gender" value="female">
+            <label for="">female</label>
+        </span>
+        <p>Mobile No.</p>
+        <input type="number" placeholder="enter number" class="input" name="mobile">
+        <p>Address</p>
+        <textarea  placeholder="enter address" name="address"></textarea>
+
+        <p>City</p>
+        <select name="city">
+            <option value="0">Select City</option>
+            <option value="Indore">Indore</option>
+            <option value="">Ujjain</option>
+            <option value="">Jabalpur</option>
+            <option value="">Pune</option>
+            <option value="">Bhopal</option>
+        </select>
+        <p>Email Address</p>
+        <input type="email" placeholder="enter email" class="input" name="emailid">
+
+        <p>Password</p>
+        <input type="password" placeholder="enter password" class="input" name="pwd">
+        <button type="submit">Create Profile</button>
+    </form>
+
+</div>
+{% endblock %}
