@@ -73,7 +73,7 @@ def register(request):
 def emailtesting(request):
     from . import emailAPItesting
     email = "ritishatiwari31@gmail.com"
-    password = "ritisha31_12"
+    password = "hstkedkuxketsqth"
     res = emailAPItesting.sendMail(email, password)
     return HttpResponse(res)
     
@@ -87,8 +87,5 @@ def batchlist3(request):
     result=batch.objects.filter(batchstatus=1)
     return render (request,"batchlist3.html",
                    {"result":result})
-
-
-
 
 

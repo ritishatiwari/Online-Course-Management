@@ -11,3 +11,9 @@ class mstuser(models.Model):
     emailid=models.CharField(max_length=45)
     pwd=models.CharField(max_length=13)
     role=models.CharField(max_length=13)
+
+
+
+
+
+
